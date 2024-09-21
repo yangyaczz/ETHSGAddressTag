@@ -42,7 +42,7 @@ contract AddressTagSBTScript is Script {
 
         // console2.log(atSBT.balanceOf(0xA552c195A6eEC742B61042531fb92732F8A91D6b,0));
 
-        atSBT.mintAddressTagSBT(0x8ed62Ec2871f15b0d5e8E361E02a76d889a5cBf1,3);
+        atSBT.mintAddressTagSBT(0x39Ef50bd29Ae125FE10C6a909E42e1C6a94Dde29,3);
 
         // uint256[] memory ids = new uint256[](4);
         // ids[0] = 0;
