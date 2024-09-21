@@ -15,3 +15,5 @@ docs/
 
 
 /sign/node_modules
+
+/sign/.env

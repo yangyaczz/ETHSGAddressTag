@@ -40,7 +40,9 @@ contract AddressTagSBTScript is Script {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(deployerPrivateKey);
 
-        console2.log(atSBT.balanceOf(0xA552c195A6eEC742B61042531fb92732F8A91D6b,0));
+        // console2.log(atSBT.balanceOf(0xA552c195A6eEC742B61042531fb92732F8A91D6b,0));
+
+        atSBT.mintAddressTagSBT(0xAE2B5589a42e644F78b7AAc2A8D5566b31c05084,1);
 
         // uint256[] memory ids = new uint256[](4);
         // ids[0] = 0;
