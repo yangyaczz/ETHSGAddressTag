@@ -1,0 +1,10 @@
+{
+  "name": "sign",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@ethsign/sp-sdk": "^0.7.5",
+    "viem": "^2.21.10"
+  }
+}

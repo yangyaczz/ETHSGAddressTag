@@ -64,3 +64,10 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+
+cast call 0x2EC5CfDE6F37029aa8cc018ED71CF4Ef67C704AE --rpc-url https://network.ambrosus-test.io "balanceOf(address,uint256)(uint256)" 0xBEbAF2a9ad714fEb9Dd151d81Dd6d61Ae0535646 0 
+
+cast call 0x2EC5CfDE6F37029aa8cc018ED71CF4Ef67C704AE --rpc-url https://network.ambrosus-test.io "balanceOf(address,uint256)(uint256)" 0xBEbAF2a9ad714fEb9Dd151d81Dd6d61Ae0535646 0x0
+
+cast call 0x2EC5CfDE6F37029aa8cc018ED71CF4Ef67C704AE --rpc-url https://network.ambrosus-test.io "isApprovedForAll(address,address)(bool)" 0xBEbAF2a9ad714fEb9Dd151d81Dd6d61Ae0535646 0xBEbAF2a9ad714fEb9Dd151d81Dd6d61Ae0535646
