@@ -12,33 +12,36 @@ const client = new SignProtocolClient(SpMode.OnChain, {
 });
 
 
-// async function createSchemademo() {
-//     const res = await client.createSchema({
-//         name: "Address Tag",
-//         data: [
-//             { name: "contractDetails", type: "string" },
-//             { name: "signer", type: "address" },
-//         ],
-//     });
-//     console.log(res)
-// }
+async function createSchemademo() {
+    const res = await client.createSchema({
+        name: "Address Tag",
+        data: [
+            { name: "target", type: "address" },
+            { name: "tagTypeId", type: "uint256" },
+            { name: "from", type: "address" },
+            { name: "signer", type: "address" },
+        ],
+    });
+    console.log(res)
+}
+
 // createSchemademo()
 
 
-async function createNotaryAttestation(contractDetails, signer) {
+async function createNotaryAttestation(target, tagTypeId, from, signer) {
     const res = await client.createAttestation({
-        schemaId: "0x2f1",
+        schemaId: "0x2f6",
         data: {
-            contractDetails,
+            target,
+            tagTypeId,
+            from,
             signer
         },
         indexingValue: signer.toLowerCase()
     });
 
-    console.log('result:', res)
+    console.log('attestation result:', res)
 }
-
-// createNotaryAttestation("dasdsaddddddd", '0xBEbAF2a9ad714fEb9Dd151d81Dd6d61Ae0535646')
 
 
 const airTest = defineChain({
@@ -107,7 +110,7 @@ setInterval(async () => {
                     });
                     console.log(`deocde data:`, decodedData);
 
-                    createNotaryAttestation(decodedData.args[1].toString(), decodedData.args[0])
+                    createNotaryAttestation(decodedData.args[0], decodedData.args[1].toString(), tx.from, privateKeyToAccount(privateKey).address)
                 });
 
                 console.log('~~~~~~~~~~~~~~~')
